@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Prognosis'),
+          title: Text('Prognosis App'),
           backgroundColor: Color(0xff1489B2),
         ),
         drawer: Drawer(
