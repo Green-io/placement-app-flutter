@@ -14,7 +14,7 @@ String b;
 String c;
 String d;
 String e;
-var fdata;
+String fdata;
 var salary;
 var status;
 
@@ -32,13 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
     var url =
         'https://placement-app.herokuapp.com/api?ssc_p=80&hsc_p=80&degree_p=80&etest_p=80&mba_p=70&gender_M=0&degree_t=0&workex_Yes=0';
     var r = await http.get(url);
-    setState(() {
-      var data = r.body;
-      
-    });
-    print(data.runtimeType);
-    print(data['salary']);
-    print(data['status']);
+    setState(() async {
+      var data = await r.body;
+      fdata = jsonDecode(data);
+     });
+    print(fdata.runtimeType);
+    print(fdata['salary']);
+    print(fdata['status']);
   }
 
   formValidator() {
