@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       var data = r.body;
       
     });
+    print(data.runtimeType);
     print(data['salary']);
     print(data['status']);
   }
