@@ -14,7 +14,7 @@ String b;
 String c;
 String d;
 String e;
-String fdata;
+var fdata;
 var salary;
 var status;
 
@@ -34,11 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
     var r = await http.get(url);
     setState(() {
       var data = r.body;
-      var fdata = jsonDecode(data);
+      
     });
-    print(fdata.runtimeType);
-    print(fdata[salary]);
-    print(fdata[status]);
+    print(data['salary']);
+    print(data['status']);
   }
 
   formValidator() {
