@@ -5,13 +5,12 @@ class CustomTextField extends StatelessWidget {
   final Function onChanged;
   final Function validator;
   final TextInputType keyboardType;
-  final bool obscureText;
+
   CustomTextField({
     this.labelText,
     this.onChanged,
     this.validator,
     this.keyboardType,
-    this.obscureText,
   });
 
   @override
@@ -22,7 +21,6 @@ class CustomTextField extends StatelessWidget {
         validator: validator,
         keyboardType: keyboardType,
 //        autofocus: true,
-        obscureText: obscureText,
         cursorColor: Colors.blue,
         textAlign: TextAlign.left,
         decoration: InputDecoration(
