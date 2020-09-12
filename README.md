@@ -5,7 +5,7 @@ Prognosis is an **AI based Placement and Salary Predictor** tool that enables MB
 This is an android application, developed using Flutter and Flask, can be run on any android mobile phone to get the output instantaneously. It aids to bridge the gap between the recruiters and the candidates.
 
 ## View Demo:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dcKjbdTzogQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://youtu.be/dcKjbdTzogQ
 
 ## Screenshots:
 <img src="assets/home_page.png" align="left" height="640" width="360" ></a>
