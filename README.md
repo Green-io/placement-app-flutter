@@ -6,19 +6,11 @@ This is an android application, developed using Flutter and Flask, can be run on
 
 
 ## Screenshots:
-![Home Page](assets/home_page.png)
-
-![form 1](assets/form1.png)
-
-![result 1](assets/result_yes.png)
-
-![form 2](assets/form2.png)
-
-![result 2](assets/result_no.png)
-
-![app drawer](assets/app_drawer.png)
-
-![info page](assets/info_page.png)
-
-
+<img src="assets/home_page.png" align="left" height="768" width="432" ></a>
+<img src="assets/form1.png" align="left" height="768" width="432" ></a>
+<img src="assets/result_yes.png" align="left" height="768" width="432" ></a>
+<img src="assets/form2.png" align="left" height="768" width="432" ></a>
+<img src="assets/result_no.png" align="left" height="768" width="432" ></a>
+<img src="assets/app_drawer.png" align="left" height="768" width="432" ></a>
+<img src="assets/info_page.png" align="left" height="768" width="432" ></a>
 
