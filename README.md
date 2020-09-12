@@ -6,11 +6,11 @@ This is an android application, developed using Flutter and Flask, can be run on
 
 
 ## Screenshots:
-<img src="assets/home_page.png" align="left" height="768" width="432" ></a>
-<img src="assets/form1.png" align="left" height="768" width="432" ></a>
-<img src="assets/result_yes.png" align="left" height="768" width="432" ></a>
-<img src="assets/form2.png" align="left" height="768" width="432" ></a>
-<img src="assets/result_no.png" align="left" height="768" width="432" ></a>
-<img src="assets/app_drawer.png" align="left" height="768" width="432" ></a>
-<img src="assets/info_page.png" align="left" height="768" width="432" ></a>
+<img src="assets/home_page.png" align="left" height="640" width="360" ></a>
+<img src="assets/form1.png" align="left" height="640" width="360" ></a>
+<img src="assets/result_yes.png" align="left" height="640" width="360" ></a>
+<img src="assets/form2.png" align="left" height="640" width="360" ></a>
+<img src="assets/result_no.png" align="left" height="640" width="360" ></a>
+<img src="assets/app_drawer.png" align="left" height="640" width="360" ></a>
+<img src="assets/info_page.png" align="left" height="640" width="360" ></a>
 
