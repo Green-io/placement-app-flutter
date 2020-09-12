@@ -1,16 +1,19 @@
 import 'package:placement_prediction/components/custom_container.dart';
 import 'package:flutter/material.dart';
+import 'package:placement_prediction/screens/home_screen.dart';
 import 'home_page_body.dart';
 
-class ResultPage extends StatelessWidget {
+class ResultPage extends StatefulWidget {
+  @override
+  _ResultPageState createState() => _ResultPageState();
+}
+
+class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFF0A0E21),
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -85,7 +88,7 @@ class ResultPage extends StatelessWidget {
                             ],
                           )
                         : Center(
-                            child: CircularProgressIndicator(),
+                            child: Text(""),
                           ),
                   ],
                 ),
@@ -95,7 +98,12 @@ class ResultPage extends StatelessWidget {
               height: 50.0,
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
                 },
                 color: Colors.lightBlue,
                 child: Text(

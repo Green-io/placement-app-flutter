@@ -17,13 +17,13 @@ class InfoPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(height: 300),
+                        SizedBox(height: 200),
                         Text(
                           'Prognosis',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 56,
-                            color: Color(0xff1489B2),
+                            color: Color(0xff144087),
                             fontWeight: FontWeight.w900,
                           ),
                           textAlign: TextAlign.left,
@@ -33,7 +33,7 @@ class InfoPage extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 31,
-                            color: Color(0xff384C54),
+                            color: Color(0xFF0A0E21),
                             fontWeight: FontWeight.w300,
                           ),
                           textAlign: TextAlign.left,

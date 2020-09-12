@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Prognosis App'),
-          backgroundColor: Color(0xff1489B2),
+          backgroundColor: Color(0xFF0A0E21),
         ),
         drawer: Drawer(
           child: ListView(
@@ -20,8 +20,8 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
-                      Colors.blueAccent,
-                      Colors.lightBlueAccent,
+                      Colors.blueGrey[900],
+                      Color(0xFF0A0E21).withOpacity(.9),
                     ],
                   ),
                 ),
