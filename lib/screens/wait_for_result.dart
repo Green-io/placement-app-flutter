@@ -12,7 +12,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 8),
+      Duration(seconds: 12),
       () => Navigator.push(
         context,
         MaterialPageRoute(
