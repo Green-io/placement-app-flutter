@@ -67,16 +67,16 @@ class InfoPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                            'A Make In India 🇮🇳 Initiative',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 25.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20.0,
-                          ),
+                          // Text(
+                          //   'A Make In India 🇮🇳 Initiative',
+                          //   textAlign: TextAlign.center,
+                          //   style: TextStyle(
+                          //     fontSize: 25.0,
+                          //   ),
+                          // ),
+                          // SizedBox(
+                          //   height: 20.0,
+                          // ),
                           Text(
                             'Created By',
                             style: TextStyle(
@@ -86,11 +86,11 @@ class InfoPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'Green.io',
+                            'Ritwik, Asma & Sachin',
                             style: TextStyle(
-                              color: Colors.green,
-                              fontSize: 21.0,
-                              letterSpacing: 1.5,
+                              color: Colors.black,
+                              fontSize: 18.0,
+                              letterSpacing: 1.0,
                             ),
                           ),
                         ],

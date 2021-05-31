@@ -5,12 +5,16 @@ class CustomTextField extends StatelessWidget {
   final Function onChanged;
   final Function validator;
   final TextInputType keyboardType;
+  final TextEditingController controller;
+  final TextInputAction textInputAction;
 
   CustomTextField({
     this.labelText,
     this.onChanged,
     this.validator,
     this.keyboardType,
+    this.controller,
+    this.textInputAction,
   });
 
   @override
@@ -20,8 +24,9 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         validator: validator,
         keyboardType: keyboardType,
-//        autofocus: true,
+        textInputAction: textInputAction,
         cursorColor: Colors.blue,
+        controller: controller,
         textAlign: TextAlign.left,
         decoration: InputDecoration(
           labelText: labelText,

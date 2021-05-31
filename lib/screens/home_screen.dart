@@ -74,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                 icon: FontAwesomeIcons.github,
                 iconText: 'GitHub',
                 onTap: () async {
-                  var url = 'https://github.com/Green-io';
+                  var url = 'https://github.com/itsrko02';
                   try {
                     if (await canLaunch(url)) {
                       await launch(url);

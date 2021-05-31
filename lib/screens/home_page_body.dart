@@ -1,22 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:placement_prediction/components/custom_text_field.dart';
-import 'package:http/http.dart' as http;
-import 'wait_for_result.dart';
-
-int x = 0;
-int y = 0;
-int z = 0;
-int a = 0;
-int b = 0;
-var data;
-int gender = 0;
-int degree = 0;
-int work = 0;
-
-//var salary;
-//var status;
+import 'package:placement_prediction/screens/results_screen.dart';
 
 class HomePageBody extends StatefulWidget {
   @override
@@ -24,32 +9,62 @@ class HomePageBody extends StatefulWidget {
 }
 
 class _HomePageBodyState extends State<HomePageBody> {
-  final _formKey = GlobalKey<FormState>();
-  web(ssp, hsp, ugp, pets, mbap) async {
-    var url =
-        //"https://prognosis-app.herokuapp.com/api?ssc_p=80&hsc_p=80&degree_p=80&etest_p=80&mba_p=70&gender_M=0&degree_t=0&workex_Yes=0";
-        "https://prognosis-app.herokuapp.com/api?ssc_p=${ssp}&hsc_p=${hsp}&degree_p=${ugp}&etest_p=${pets}&mba_p=${mbap}&gender_M=${gender}&degree_t=${degree}&workex_Yes=${work}";
-//  var data;
+  TextEditingController secondarySchoolController,
+      highSchoolController,
+      ugDegreeController,
+      placementTestController,
+      mbaPercentageController;
 
-    var res = await http.get(url);
-    data = jsonDecode(res.body);
-    setState(() {});
-    print(data);
+  int secondarySchoolPercent = 0;
+  int highSchoolPercent = 0;
+  int ugDegreePercent = 0;
+  int placementTestPercent = 0;
+  int mbaPercent = 0;
+  int gender = 0;
+  int degree = 0;
+  int workExp = 0;
+
+  String URL;
+
+  final _formKey = GlobalKey<FormState>();
+  getURL(ssp, hsp, ugp, pets, mbap) {
+    var url =
+        "https://prognosis-app.herokuapp.com/api?ssc_p=${ssp}&hsc_p=${hsp}&degree_p=${ugp}&etest_p=${pets}&mba_p=${mbap}&gender_M=${gender}&degree_t=${degree}&workex_Yes=${workExp}";
+    setState(() {
+      URL = url;
+    });
     print(url);
   }
 
   @override
   void initState() {
     super.initState();
+    this.secondarySchoolController = TextEditingController();
+    this.highSchoolController = TextEditingController();
+    this.ugDegreeController = TextEditingController();
+    this.placementTestController = TextEditingController();
+    this.mbaPercentageController = TextEditingController();
   }
 
   formValidator() {
     if (_formKey.currentState.validate()) {
       print("Validation Success");
+      setState(() {
+        secondarySchoolPercent = int.parse(secondarySchoolController.text);
+        highSchoolPercent = int.parse(highSchoolController.text);
+        ugDegreePercent = int.parse(ugDegreeController.text);
+        placementTestPercent = int.parse(placementTestController.text);
+        mbaPercent = int.parse(mbaPercentageController.text);
+      });
 
-      web(x, y, z, a, b);
+      getURL(secondarySchoolPercent, highSchoolPercent, ugDegreePercent,
+          placementTestPercent, mbaPercent);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => WaitingScreen()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => ResultPage(
+                    url: URL,
+                  )));
     } else {
       print("Validation Error");
     }
@@ -83,10 +98,10 @@ class _HomePageBodyState extends State<HomePageBody> {
 
       switch (_radioValue3) {
         case 0:
-          work = 0;
+          workExp = 0;
           break;
         case 1:
-          work = 1;
+          workExp = 1;
           break;
       }
     });
@@ -126,10 +141,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                     validator: (validate) =>
                         validate.length == 0 ? "Required" : null,
                     keyboardType: TextInputType.number,
-                    onChanged: (val) {
-                      x = int.parse(val);
-                      print(x);
-                    },
+                    textInputAction: TextInputAction.next,
+                    controller: secondarySchoolController,
                   ),
                   CustomTextField(
                     labelText: 'High School Percentage', //validation
@@ -137,10 +150,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                         validate.length == 0 ? "Required" : null,
 
                     keyboardType: TextInputType.number,
-                    onChanged: (val2) {
-                      y = int.parse(val2);
-                      print(y);
-                    },
+                    textInputAction: TextInputAction.next,
+                    controller: highSchoolController,
                   ),
                   CustomTextField(
                     labelText: 'UG Degree Percentage', //validation
@@ -148,30 +159,24 @@ class _HomePageBodyState extends State<HomePageBody> {
                         validate.length == 0 ? "Required" : null,
 
                     keyboardType: TextInputType.number,
-                    onChanged: (val3) {
-                      z = int.parse(val3);
-                      print(z);
-                    },
+                    textInputAction: TextInputAction.next,
+                    controller: ugDegreeController,
                   ),
                   CustomTextField(
                     labelText: 'Placement Eligibility Test Score',
                     validator: (validate) =>
                         validate.length == 0 ? "Required" : null,
                     keyboardType: TextInputType.number,
-                    onChanged: (val4) {
-                      a = int.parse(val4);
-                      print(a);
-                    },
+                    textInputAction: TextInputAction.next,
+                    controller: placementTestController,
                   ),
                   CustomTextField(
                     labelText: 'MBA Percentage',
                     keyboardType: TextInputType.number,
                     validator: (validate) =>
                         validate.length == 0 ? "Required" : null,
-                    onChanged: (val5) {
-                      b = int.parse(val5);
-                      print(b);
-                    },
+                    textInputAction: TextInputAction.done,
+                    controller: mbaPercentageController,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 15.0),
@@ -179,7 +184,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Row(
-//                        mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Flexible(
@@ -218,8 +222,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                           height: 10.0,
                         ),
                         Row(
-//                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Flexible(
@@ -258,8 +260,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                           height: 10.0,
                         ),
                         Row(
-//                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Flexible(
